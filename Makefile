@@ -26,9 +26,9 @@ requirements: test_environment
 
 ## Delete all compiled Python files and output files.
 clean:
+	rm -rf cache
 	rm -rf output/*
 	rm -rf .pytest_cache
-	find . -type d -name "cache" -delete
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
 
