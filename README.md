@@ -40,6 +40,9 @@ In a Python file or Jupyter notebook use the following syntax to generate a post
     # Variables you can control
     lat = 0.00
     long = 0.00
+    """
+    Alternatively you may set `location` to an address, city, or state as a string.
+    """
     poster_height = 15
     poster_width = 15
     poster_radius = 1900
@@ -47,7 +50,7 @@ In a Python file or Jupyter notebook use the following syntax to generate a post
 
     # Creating the poster
     your_poster = Poster(
-        coordinates=(lat, long),
+        location=(lat, long),
         figsize=(poster_height, poster_width),
         radius=poster_radius,
         theme=poster_theme
