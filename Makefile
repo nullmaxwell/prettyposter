@@ -26,10 +26,11 @@ requirements: test_environment
 
 ## Delete all compiled Python files and output files.
 clean:
+	rm -rf output/*
+	rm -rf .pytest_cache
+	find . -type d -name "cache" -delete
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
-	rm -rf cache/
-	rm -rf output/*
 
 ## Lint using flake8
 lint:
@@ -67,9 +68,8 @@ test_environment:
 	$(PYTHON_INTERPRETER) test_environment.py
 
 ## Tests python source code
-test_source:
-	make clean && pytest tests/*
-
+test_src:
+	pytest tests/*
 
 #################################################################################
 # Self Documenting Commands                                                     #
