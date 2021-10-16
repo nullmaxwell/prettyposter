@@ -1,7 +1,7 @@
 prettyposter
 ==============================
 
-A simple object oriented wrapper for the [prettymaps](https://github.com/marceloprates/prettymaps) package to help you generate pretty looking posters for you to print yourself in minutes!
+A simplified object-oriented wrapper for the [prettymaps](https://github.com/marceloprates/prettymaps) package to help you generate pretty-looking posters for you to print yourself in minutes!
 
 ## License Info
 **Under no circumstance is this package to be used for commercial purposes.**
@@ -64,7 +64,7 @@ Exporting your poster will generate an image file with the name your specified i
 ## Example Posters and Themes
 There are currently only two themes available, but I plan and encourage others to add more!
 
-You can add your own theme by running `make new_theme`, editing the values marked `#FFFFFF` within the newly generated `new_theme.json`, and using the name of that new theme as an arguemnt to the `Poster` constructor by setting `theme="new_theme"`.
+You can add your own theme by running `make new_theme`, editing the values marked `#FFFFFF` within the newly generated `new_theme.json`, and using the name of that new theme as an argument to the `Poster` constructor by setting `theme="new_theme"`.
 
 Below are a couple of examples of the exported posters created by this package in different themes.
 
