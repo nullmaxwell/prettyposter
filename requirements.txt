@@ -4,5 +4,6 @@
 # external requirements
 black
 pytest
+ipykernel
 matplotlib
 prettymaps
