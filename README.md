@@ -1,7 +1,10 @@
 prettyposter
 ==============================
 
-A simple object oriented wrapper for the [prettymaps](https://github.com/marceloprates/prettymaps) package to help you generate pretty looking posters in minutes!
+A simple object oriented wrapper for the [prettymaps](https://github.com/marceloprates/prettymaps) package to help you generate pretty looking posters for you to print yourself in minutes!
+
+## License
+This project was created in compliance with the [Creative Commons Attribution-NonCommercial 4.0 International license](http://creativecommons.org/licenses/by-nc/4.0/). 
 
 ## Built With
 A special thanks to the following projects. This project was built using the following open source packages.
