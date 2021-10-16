@@ -1,8 +1,7 @@
 from prettymaps import *
 from matplotlib import pyplot as plt
 from matplotlib import patheffects as pe
-
-# import matplotlib.font_manager as fm
+from src.themeloader import ThemeLoader
 
 
 class Poster:
@@ -14,7 +13,6 @@ class Poster:
     `coordinates` tuple or str:
         Location to depict on poster.
         tuple: (lat: float, long: float)
-        str: "City, State" or "City, Country"
 
     `figsize` tuple of ints:
         (L, W) of poster in inches to be rendered.
@@ -64,46 +62,15 @@ class Poster:
         },
     }
 
-    """
-    Below are the styling options for the poster.
-    """
-    drawing_kwargs = {
-        "background": {
-            "fc": "#F2F4CB",
-            "ec": "#dadbc1",
-            "hatch": "ooo...",
-            "zorder": -1,
-        },
-        "perimeter": {
-            "fc": "#F2F4CB",
-            "ec": "#dadbc1",
-            "lw": 0,
-            "hatch": "ooo...",
-            "zorder": 0,
-        },
-        "green": {"fc": "#D0F1BF", "ec": "#2F3737", "lw": 1, "zorder": 1},
-        "forest": {"fc": "#64B96A", "ec": "#2F3737", "lw": 1, "zorder": 1},
-        "water": {
-            "fc": "#a1e3ff",
-            "ec": "#2F3737",
-            "hatch": "ooo...",
-            "hatch_c": "#85c9e6",
-            "lw": 1,
-            "zorder": 2,
-        },
-        "parking": {"fc": "#F2F4CB", "ec": "#2F3737", "lw": 1, "zorder": 3},
-        "streets": {"fc": "#2F3737", "ec": "#475657", "alpha": 1, "lw": 0, "zorder": 3},
-        "building": {
-            "palette": ["#FFC857", "#E9724C", "#C5283D"],
-            "ec": "#2F3737",
-            "lw": 0.5,
-            "zorder": 4,
-        },
-    }
-
     osm_credit = {"color": "#2F373700"}
 
-    def __init__(self, coordinates: any, figsize: tuple = (14, 14), radius: int = 2500):
+    def __init__(
+        self,
+        coordinates: any,
+        figsize: tuple = (14, 14),
+        radius: int = 2500,
+        theme: str = "default",
+    ):
         """
         Construction of the poster object.
         """
@@ -113,7 +80,7 @@ class Poster:
             radius=int(radius),
             ax=ax,
             layers=Poster.map_layers,
-            drawing_kwargs=Poster.drawing_kwargs,
+            drawing_kwargs=ThemeLoader.loadTheme(theme),
             osm_credit=Poster.osm_credit,
         )
 

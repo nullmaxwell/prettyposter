@@ -5,7 +5,7 @@ from src.prettyposter import Poster
 @pytest.fixture
 def test_instantiation():
     """Verifies the instantiation of a poster object."""
-    test_poster = Poster((39.8283, 98.5795), (5, 5))
+    test_poster = Poster((39.8283, 98.5795), (5, 5), 2500, "default")
     return test_poster
 
 
