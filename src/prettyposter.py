@@ -127,7 +127,7 @@ class Poster:
         """
         Reveals the poster on-screen.
         """
-        return self.ax.show()
+        return self.fig.show()
 
     def export(self, filename, ext: str = ".svg"):
         """
