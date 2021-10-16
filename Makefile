@@ -6,7 +6,7 @@
 
 PROJECT_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 PROFILE = default
-PROJECT_NAME = pretty-poster
+PROJECT_NAME = prettyposter
 PYTHON_INTERPRETER = python
 
 ifeq (,$(shell which pyenv))
