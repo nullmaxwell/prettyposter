@@ -10,20 +10,15 @@ def test_instantiation():
 
 
 def test_classAttributes(test_instantiation) -> Poster:
-    """
-    Tests the instantiation of the poster object
-    """
-    assert test_instantiation != None
-    assert test_instantiation.fig != None
-    assert test_instantiation.ax != None
-    assert test_instantiation.layers != None
+    """Tests the instantiation of the poster object"""
+    assert (test_instantiation.fig != None, "Poster's fig == None")
+    assert (test_instantiation.ax != None, "Poster's ax == ax")
+    assert (test_instantiation.layers != None, "Poster's layers == None")
     return
 
 
 def test_reveal(test_instantiation):
-    """
-    Verify poster can be shown.
-    """
+    """Verify poster can be shown."""
     try:
         test_instantiation.reveal()
     except:
