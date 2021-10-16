@@ -9,6 +9,13 @@ def test_instantiation():
     return test_poster
 
 
+@pytest.fixture
+def test_instantiation_string():
+    """Verifies the instantiation of a poster object."""
+    test_poster = Poster("New York, New York", (5, 5), 2500, "default")
+    return test_poster
+
+
 def test_classAttributes(test_instantiation) -> Poster:
     """Tests the instantiation of the poster object"""
     assert (test_instantiation.fig != None, "Poster's fig == None")
