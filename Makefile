@@ -28,7 +28,8 @@ requirements: test_environment
 clean:
 	find . -type f -name "*.py[co]" -delete
 	find . -type d -name "__pycache__" -delete
-	rm -rf 
+	rm -rf cache/
+	rm -rf output/*
 
 ## Lint using flake8
 lint:
@@ -67,7 +68,7 @@ test_environment:
 
 ## Tests python source code
 test_source:
-	pytest tests/*
+	make clean && pytest tests/*
 
 
 #################################################################################
