@@ -66,7 +66,7 @@ class Poster:
 
     def __init__(
         self,
-        coordinates: any,
+        location: any,
         figsize: tuple = (14, 14),
         radius: int = 2500,
         theme: str = "default",
@@ -76,7 +76,7 @@ class Poster:
         """
         fig, ax = plt.subplots(figsize=figsize, constrained_layout=True)
         layers = plot(
-            coordinates,
+            location,
             radius=int(radius),
             ax=ax,
             layers=Poster.map_layers,
