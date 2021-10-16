@@ -27,12 +27,12 @@ def test_reveal(test_instantiation):
     return
 
 
-def test_export_default(test_instantiation):
+def test_export_png(test_instantiation):
     """
-    Verify the exporting functionality of the poster object with the default file extension.
+    Verify the exporting functionality of the poster object as a PNG.
     """
     try:
-        test_instantiation.export("test_poster")
+        test_instantiation.export("test_poster.png")
     except:
         print(">>>> Failure to export poster in default format.")
         raise
@@ -41,11 +41,11 @@ def test_export_default(test_instantiation):
 
 def test_export_png(test_instantiation):
     """
-    Verify the exporting functionality of the poster object with a PNG extension.
+    Verify the exporting functionality of the poster object as a SVG.
     """
     try:
-        test_instantiation.export("test_poster", ".png")
+        test_instantiation.export("test_poster.svg")
     except:
-        print(">>>> Failure to export poster in PNG format.")
+        print(">>>> Failure to export poster in default format.")
         raise
     return

@@ -96,12 +96,12 @@ class Poster:
         """
         return self.fig.show()
 
-    def export(self, filename, ext: str = ".svg"):
+    def export(self, filename):
         """
         Exports the poster to a given location.
         """
         try:
-            self.fig.savefig("output/" + filename + ext, dpi=500)
+            self.fig.savefig("output/" + filename, dpi=500)
         except:
             print("Invalid filepath")
             raise
