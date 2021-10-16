@@ -71,6 +71,10 @@ test_environment:
 test_src:
 	pytest tests/*
 
+## Makes a new theme file.
+new_theme:
+	cp src/themes/theme_template.json src/themes/new_theme.json
+
 #################################################################################
 # Self Documenting Commands                                                     #
 #################################################################################

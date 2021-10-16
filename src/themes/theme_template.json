@@ -1,0 +1,33 @@
+{
+    "background": {
+        "fc": "#FFFFFF",
+        "ec": "#FFFFFF",
+        "hatch": "ooo...",
+        "zorder": -1
+    },
+    "perimeter": {
+        "fc": "#FFFFFF",
+        "ec": "#FFFFFF",
+        "lw": 0,
+        "hatch": "ooo...",
+        "zorder": 0
+    },
+    "green": {"fc": "#FFFFFF", "ec": "#2F3737", "lw": 1, "zorder": 1},
+    "forest": {"fc": "#64B96A", "ec": "#2F3737", "lw": 1, "zorder": 1},
+    "water": {
+        "fc": "#FFFFFF",
+        "ec": "#FFFFFF",
+        "hatch": "ooo...",
+        "hatch_c": "#85c9e6",
+        "lw": 1,
+        "zorder": 2
+    },
+    "parking": {"fc": "#FFFFFF", "ec": "#2F3737", "lw": 1, "zorder": 3},
+    "streets": {"fc": "#FFFFFF", "ec": "#475657", "alpha": 1, "lw": 0, "zorder": 3},
+    "building": {
+        "palette": ["#FFFFFF", "#FFFFFF", "#FFFFFF"],
+        "ec": "#2F3737",
+        "lw": 0.5,
+        "zorder": 4
+    }
+}
