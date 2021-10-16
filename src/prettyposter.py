@@ -7,7 +7,21 @@ from matplotlib import patheffects as pe
 
 class Poster:
     """
-    This module creates a beautiful poster for you to print on your dumb little wall.
+    This module creates a beautiful poster for you to print or use as a wallpaper.
+
+
+    ## Parameters
+    `coordinates` tuple or str:
+        Location to depict on poster.
+        tuple: (lat: float, long: float)
+        str: "City, State" or "City, Country"
+
+    `figsize` tuple of ints:
+        (L, W) of poster in inches to be rendered.
+
+    `radius` int:
+        Radius of the poster (roundedness).
+        The higher the value the more round the map area is.
     """
 
     # Class Attributes
@@ -16,7 +30,7 @@ class Poster:
     map_layers = {
         # Controls the drawing mode ,{} That is, it is equivalent to circular drawing mode
         "perimeter": {},
-        # The following parameters are used to define from OsmStreetMap Select the acquired vector layer features
+        # The following parameters are used to define from OsmStreetMap Select the acquired vector layer features , If you don't understand it, you can copy it without change
         "streets": {
             "custom_filter": '["highway"~"motorway|trunk|primary|secondary|tertiary|residential|service|unclassified|pedestrian|footway"]',
             "width": {
@@ -89,31 +103,25 @@ class Poster:
 
     osm_credit = {"color": "#2F373700"}
 
-    """
-    Beef
-    """
-
-    def __init__(
-        self,
-        coordinates: tuple or str,
-        figsize: tuple = (14, 14),
-        show: bool = False,
-        radius: int = 2500,
-        annotation: str = None,
-    ) -> None:
+    def __init__(self, coordinates: any, figsize: tuple = (14, 14), radius: int = 2500):
         """
         Construction of the poster object.
         """
-        self.fig, self.ax = plt.subplots(figsize=figsize, constrained_layout=True)
-        self.layers = plt.plot(
-            coordinates, radius, ax=self.ax, layers=Poster.map_layers
+        fig, ax = plt.subplots(figsize=figsize, constrained_layout=True)
+        layers = plot(
+            coordinates,
+            radius=int(radius),
+            ax=ax,
+            layers=Poster.map_layers,
+            drawing_kwargs=Poster.drawing_kwargs,
+            osm_credit=Poster.osm_credit,
         )
 
-        if annotation != None:
-            print("Placeholder for annotations.")
-        if show:
-            Poster.ax.show()
-        pass
+        self.layers = layers
+        self.fig = fig
+        self.ax = ax
+
+        return
 
     def reveal(self):
         """
@@ -121,12 +129,12 @@ class Poster:
         """
         return self.ax.show()
 
-    def export(self, filename):
+    def export(self, filename, ext: str = ".svg"):
         """
         Exports the poster to a given location.
         """
         try:
-            self.savefig(filename + ".svg", dpi=500)
+            self.fig.savefig("output/" + filename + ext, dpi=500)
         except:
             print("Invalid filepath")
             raise

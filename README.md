@@ -1,4 +1,4 @@
-pretty-poster
+prettyposter
 ==============================
 
 A simple object oriented wrapper for the [prettymaps](https://github.com/marceloprates/prettymaps) package.
