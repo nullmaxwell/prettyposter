@@ -53,7 +53,7 @@ endif
 
 ## Initializes the created pyenv virtualenv in the local directory.
 init_environment:
-	pyenv virtualenv local $(PROJECT_NAME) && pyenv shell $(PROJECT_NAME)
+	pyenv virtualenv $(PROJECT_NAME) && pyenv shell $(PROJECT_NAME)
 
 ## Removes all installed packages from the installed pyenv.
 clean_environment:
